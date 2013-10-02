@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
-gem 'twitter', github: 'sferik/twitter'
-gem 'dotenv'
+source 'http://rubygems.org'
+
 gem 'pry'
+gem 'dotenv'
+gem 'twitter', github: 'sferik/twitter'
