@@ -16,7 +16,7 @@ If you have other versions of the gem, you can uninstall them by running
 ```ruby
 gem uninstall twitter
 ```
-and selecting the versions you'd like to uninstall
+and selecting the versions you would like to uninstall
 
 Once you have the gem installed, go ahead and create a Gemfile and a main.rb (I've used twitter.rb). Your Gemfile
 should looks something like: 
@@ -91,7 +91,7 @@ client.filter(track: topics.join(",")) do |tweet|
   puts tweet.text if tweet.lang == 'en' # this will stream only english tweets.
 end
 ```
-Now, why don't we end our stream when we have about 100 tweets, and let's stor the tweet information at the same time. We 
+Now, why don't we end the stream when we have about 100 tweets, and let's store the tweet information at the same time. We 
 can also output a counter to see the tweets we're getting.
 ```ruby
 stored_tweets = []
