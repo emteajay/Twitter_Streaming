@@ -71,7 +71,7 @@ after this chunk of code, and try using pry to explore the client object a bit. 
 make sure that you have the correct version of the gem (see install command at top), and that your environment variables 
 are being properly loaded.
 
-## Using The Gem (A.K.A. GETTIN' DEM TWEETS)
+## Using The Gem (A.K.A. Gettin' Dem Tweets)
 Now that we have our client object, let's use it! We're going to filter the stream by a few keywords: 
 ```ruby
 topics = ["barack","obama"]
@@ -127,5 +127,32 @@ end
 all_words.flatten!
 ```
 Because the map function will return an array off arrays, with each subarray being an array of all the words from a single
-tweet's text, we're going to flatten the result to get a single array containing all the words we've captured.
-  
+tweet's text, we're going to flatten the result to get a single array containing all the words we've captured. Now let's 
+get some data on these words by calculating the frequency with which each word appears.
+```ruby
+frequencies = {}
+all_words.each do |word|
+  frequencies[word.to_sym] ||= 0 # initializes the value of the word to zero if it doesn't exist
+  frequencies[word.to_sym] += 1 # increments the number of times we have seen this word
+end
+
+# sorts frequency hash by value in descending order (returns array)
+sorted_frequencies = frequencies.sort_by {|key, value| value}.reverse 
+
+binding.pry
+```
+In pry, we can check out the sorted_frequencies and see that it is a sorted array, whose indecies are arrays with the word and
+the number of times the word appeared over all of our tweets.
+
+## Summary
+We began by setting up the twitter gem for use, and grabbed a hundred tweets containing either the words 'barrack' or
+'obama'. We then stored each of these as a hash object containing the screenname of the person who sent the tweet and the
+text of the tweet in an array called stored_tweets. From this array, we created a words array the extracted every word
+from the text of every tweet. From this words array, we constructed a hash of frequencies in which we calculated the number
+of times a word appeard over our data. 
+
+This is a really cool tool for extracting data, and I plan on using it more in the future. I hope this little tutorial (along
+with the complete files above) helps anyone who is remotely interested in getting some twitter data. I just learned
+all of this today thanks to the excelent documentation on the [gem](https://github.com/sferik/twitter) documentation. Also,
+thanks to [Sferik](https://github.com/sferik) for creating the awesomeness that is the twitter gem.
+
