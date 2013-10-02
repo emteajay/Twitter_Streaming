@@ -149,7 +149,7 @@ We began by setting up the twitter gem for use, and grabbed a hundred tweets con
 'obama'. We then stored each of these as a hash object containing the screenname of the person who sent the tweet and the
 text of the tweet in an array called stored_tweets. From this array, we created a words array the extracted every word
 from the text of every tweet. From this words array, we constructed a hash of frequencies in which we calculated the number
-of times a word appeard over our data. 
+of times each word appeard over our data. 
 
 This is a really cool tool for extracting data, and I plan on using it more in the future. I hope this little tutorial (along
 with the complete files above) helps anyone who is remotely interested in getting some twitter data. I just learned
