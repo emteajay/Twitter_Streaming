@@ -18,7 +18,7 @@ gem uninstall twitter
 ```
 and selecting the versions you would like to uninstall
 
-Once you have the gem installed, go ahead and create a Gemfile and a main.rb (I've used twitter.rb). Your Gemfile
+Once you have the gem installed, go ahead and create a Gemfile and a main.rb. Your Gemfile
 should looks something like: 
 ```ruby
 # Gemfile
